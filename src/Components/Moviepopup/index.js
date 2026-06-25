@@ -16,7 +16,7 @@ const Moviepopup = (props)=>
 
     const callDetailedMovieApi = async()=>
     {
-        const detailedMovieInfoApiUrl = `http://www.omdbapi.com/?i=${imdbID}&plot=full&apikey=9e72c543`
+        const detailedMovieInfoApiUrl = `https://www.omdbapi.com/?i=${imdbID}&plot=full&apikey=9e72c543`
         const options = {method:"GET"}
         const response = await fetch(detailedMovieInfoApiUrl,options)
         const data = await response.json()
