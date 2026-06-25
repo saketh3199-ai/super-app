@@ -14,7 +14,7 @@ const Movierow = (props)=>
                                                 (
                                                     (movie)=>
                                                     {
-                                                        return <Moviepopup key={movie.imdbID} movie={movie} movieDetailId = {movie.imdbID} />
+                                                        return <Moviepopup key={movie.imdbID} movie={movie} />
                                                     
                                                     }
                                                 )
