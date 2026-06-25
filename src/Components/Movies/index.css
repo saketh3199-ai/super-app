@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
+
+/* ─── Page container ─────────────────────────────────────── */
+.movies-container {
+  background-color: #0d0d0d;
+  min-height: 100vh;
+  padding: 28px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ─── Header ─────────────────────────────────────────────── */
+.movies-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+
+.movies-app-name {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: #4ade80;
+  letter-spacing: 1px;
+}
+
+.movies-user-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #4ade80;
+  flex-shrink: 0;
+}
+
+.movies-avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ─── Page title ─────────────────────────────────────────── */
+.movies-page-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+/* ─── Category section ───────────────────────────────────── */
+.movies-category-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.movies-category-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #9ca3af;
+  letter-spacing: 0.3px;
+}
+
+/* ─── Cards row ──────────────────────────────────────────── */
+.movies-cards-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+/* ─── Individual movie card ──────────────────────────────── */
+.movie-card {
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #1a1a1a;
+  aspect-ratio: 16 / 9;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVENESS
+═══════════════════════════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .movies-container {
+    padding: 20px 20px;
+    gap: 22px;
+  }
+
+  .movies-cards-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
+
+/* Small tablet / large mobile */
+@media (max-width: 640px) {
+  .movies-container {
+    padding: 16px;
+    gap: 18px;
+  }
+
+  .movies-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .movies-page-title {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+  .movies-cards-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .movies-user-avatar {
+    width: 40px;
+    height: 40px;
+  }
+}

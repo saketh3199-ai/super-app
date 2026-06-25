@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ─── Root container ─────────────────────────────────────── */
+.category-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #000000;
+  padding: 48px 40px;
+  gap: 32px;
+}
+
+.category-content-row {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 32px;
+  flex: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LEFT SIDE — category-list-container
+═══════════════════════════════════════════════════════════ */
+.category-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 8px;
+}
+
+.category-app-name {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: #4ade80;
+  letter-spacing: 1px;
+}
+
+.category-main-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+/* ─── Selected chips ─────────────────────────────────────── */
+.user-selected-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.selected-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #166534;
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.selected-chip:hover {
+  background-color: #15803d;
+}
+
+.chip-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.chip-cross {
+  font-size: 0.75rem;
+  color: #bbf7d0;
+  font-weight: 700;
+}
+
+/* ─── Warning message ────────────────────────────────────── */
+.minimum-warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #ef4444;
+}
+
+.warning-icon {
+  font-size: 1rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RIGHT SIDE — categories-to-be-selected-container
+═══════════════════════════════════════════════════════════ */
+.categories-to-be-selected-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-content: start;
+}
+
+/* ─── Individual card ────────────────────────────────────── */
+.category-card-individual-container {
+  border-radius: 16px;
+  padding: 14px 14px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.category-card-individual-container:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.card-image {
+  width: 70%;
+  height:150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ─── Card background colors ─────────────────────────────── */
+.card-action   { background-color: #c2410c; }
+.card-comedy   { background-color: #7c3aed; }
+.card-drama    { background-color: #be185d; }
+.card-music    { background-color: #0e7490; }
+.card-sports   { background-color: #065f46; }
+.card-thriller { background-color: #1e40af; }
+.card-fantasy  { background-color: #92400e; }
+.card-romance  { background-color: #9d174d; }
+
+/* ─── Next Page button ───────────────────────────────────── */
+.next-page-button-container {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 8px;
+}
+
+.next-page-button-inactive {
+  background-color: #bbf7d0;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 999px;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.next-page-button-active {
+  background-color: #4ade80;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.next-page-button:hover {
+  background-color: #22c55e;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 222, 128, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVENESS
+═══════════════════════════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .category-container {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+
+  .categories-to-be-selected-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 560px) {
+  .category-container {
+    padding: 24px 16px;
+    gap: 20px;
+  }
+
+  .categories-to-be-selected-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-main-heading {
+    font-size: 1.3rem;
+  }
+
+  .card-image {
+    height: 80px;
+  }
+
+  .next-page-button {
+    padding: 10px 24px;
+    font-size: 0.82rem;
+  }
+}

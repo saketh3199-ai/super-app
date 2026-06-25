@@ -1,0 +1,519 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Roboto+Mono:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0a0a0f;
+  color: #ffffff;
+}
+
+/* ─── Dashboard grid ─────────────────────────────────────── */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1fr;
+  gap: 20px;
+  min-height: 100vh;
+  background-color: #0a0a0f;
+  padding: 32px 28px;
+  align-items: stretch;
+}
+
+/* ─── Base widget card ───────────────────────────────────── */
+.widget {
+  border-radius: 20px;
+  padding: 20px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LEFT COLUMN
+═══════════════════════════════════════════════════════════ */
+.dashboard-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+/* ── Profile Widget ── */
+.profile-widget {
+  background-color: #5b4fcf;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.profile-avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 90px;
+  border-radius: 14px;
+  overflow: hidden;
+  background-color: #7c6ee0;
+  flex-shrink: 0;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profile-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #e0d9ff;
+}
+
+.profile-email {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: #c4baff;
+}
+
+.profile-username {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.profile-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile-chip {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ── Weather Widget ── */
+.weather-widget {
+  background-color: #0f0f1a;
+  border: 1px solid #1e1e30;
+  padding: 0;
+  overflow: hidden;
+  flex: 1;
+}
+
+.weather-date-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #e91e8c, #c2185b);
+  padding: 12px 18px;
+}
+
+.weather-date,
+.weather-time {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.weather-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  gap: 8px;
+}
+
+.weather-condition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.weather-icon {
+  font-size: 2rem;
+}
+
+.weather-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.weather-divider {
+  width: 1px;
+  height: 50px;
+  background-color: #2a2a3a;
+}
+
+.weather-temp-value {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.weather-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.weather-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-icon {
+  font-size: 0.9rem;
+}
+
+.stat-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  color: #6b7280;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MIDDLE COLUMN
+═══════════════════════════════════════════════════════════ */
+.dashboard-middle-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+}
+
+/* ── Notes Widget ── */
+.notes-widget {
+  background-color: #f5c842;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.notes-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.notes-content {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #2a2a2a;
+  line-height: 1.6;
+}
+
+.notes-textarea {
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  color: #2a2a2a;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+}
+
+.notes-textarea::placeholder {
+  color: #7a6a00;
+}
+
+/* ── Timer Widget ── */
+.timer-widget {
+  background-color: #13131f;
+  border: 1px solid #1e1e30;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 20px;
+  flex: 1;
+}
+
+.timer-circle-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.timer-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.timer-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.timer-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+}
+
+.timer-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.timer-unit-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.timer-value {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.timer-arrow {
+  font-size: 0.7rem;
+  color: #6b7280;
+  cursor: pointer;
+  user-select: none;
+}
+
+.timer-colon {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 18px;
+}
+
+.timer-start-button {
+  background: linear-gradient(90deg, #f87171, #ef4444);
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RIGHT COLUMN
+═══════════════════════════════════════════════════════════ */
+.dashboard-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+/* ── News Widget ── */
+.news-widget {
+  background-color: #ffffff;
+  padding: 0;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.news-image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  padding: 16px 14px 10px;
+}
+
+.news-headline {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+}
+
+.news-date {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  color: #d1d5db;
+  margin-top: 4px;
+  display: block;
+}
+
+.news-body {
+  padding: 14px;
+  flex: 1;
+}
+
+.news-description {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: #374151;
+  line-height: 1.7;
+}
+
+/* ── Browse button ── */
+.browse-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.browse-button {
+  background-color: #4ade80;
+  color: #0a0a0f;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 10px 28px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.browse-button:hover {
+  background-color: #22c55e;
+  transform: translateY(-1px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVENESS
+═══════════════════════════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .dashboard-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
+  }
+
+  .dashboard-right-column {
+    grid-column: 1 / -1;
+    height: auto;
+  }
+
+  .news-image-container {
+    height: 260px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 16px;
+    align-items: start;
+  }
+
+  .dashboard-left-column,
+  .dashboard-middle-column,
+  .dashboard-right-column {
+    height: auto;
+  }
+
+  .profile-widget,
+  .weather-widget,
+  .notes-widget,
+  .timer-widget,
+  .news-widget {
+    flex: unset;
+  }
+
+  .timer-widget {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timer-circle-container {
+    width: 140px;
+    height: 140px;
+  }
+
+  .timer-controls {
+    justify-content: center;
+  }
+
+  .weather-body {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .weather-divider {
+    display: none;
+  }
+}

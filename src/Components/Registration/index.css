@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Caveat:wght@600&family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700&display=swap');
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Root container ─────────────────────────────────────── */
+.registration-total-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0d0d0d;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LEFT SIDE — discover-new-things-container
+═══════════════════════════════════════════════════════════ */
+.discover-new-things-container {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.discover-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.55) saturate(1.15);
+}
+
+/* gradient overlay: dark at bottom, transparent at top */
+.discover-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0.0) 100%
+  );
+}
+
+.discover-heading {
+  position: absolute;
+  bottom: 48px;
+  left: 40px;
+  right: 40px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RIGHT SIDE — registration-container
+═══════════════════════════════════════════════════════════ */
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 48px 40px;
+  background-color: #111111;
+}
+
+/* ─── App name block ─────────────────────────────────────── */
+.app-name-do-action-container {
+  text-align: center;
+}
+
+.app-name {
+  font-family: 'Permanent Marker', cursive;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #4ade80;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.app-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #d1d5db;
+  letter-spacing: 0.3px;
+}
+
+/* ─── Form block ─────────────────────────────────────────── */
+.registration-form-signup-button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.reg-input {
+  width: 100%;
+  padding: 13px 16px;
+  background-color: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #f3f4f6;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reg-input::placeholder {
+  color: #6b7280;
+}
+
+.reg-input:focus {
+  border-color: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.12);
+}
+
+/* checkbox row */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.reg-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #4ade80;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkbox-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  color: #9ca3af;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* signup button */
+.signup-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #4ade80;
+  color: #0d0d0d;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  margin-top: 4px;
+}
+
+.signup-button:hover {
+  background-color: #22c55e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(74, 222, 128, 0.3);
+}
+
+.signup-button:active {
+  transform: translateY(0);
+}
+
+/* ─── Terms block ────────────────────────────────────────── */
+.terms-agreements-explanation-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.terms-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.terms-highlight {
+  color: #4ade80;
+  font-family: 'Caveat', cursive;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-style: italic;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.terms-highlight:hover {
+  color: #86efac;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVENESS
+   The two-column layout is kept at ALL breakpoints as required.
+   We only adjust sizing/padding, never stack the columns.
+═══════════════════════════════════════════════════════════ */
+
+/* Tablet — tighten spacing */
+@media (max-width: 900px) {
+  .registration-container {
+    padding: 36px 24px;
+    gap: 24px;
+  }
+
+  .discover-heading {
+    font-size: 1.4rem;
+    bottom: 36px;
+    left: 24px;
+    right: 24px;
+  }
+
+  .app-name {
+    font-size: 2rem;
+  }
+}
+
+/* Small mobile — shrink further but keep side-by-side */
+@media (max-width: 540px) {
+  .registration-total-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .discover-new-things-container {
+    min-height: 100vh;
+  }
+
+  .discover-heading {
+    font-size: 1rem;
+    bottom: 20px;
+    left: 12px;
+    right: 8px;
+  }
+
+  .registration-container {
+    padding: 24px 12px;
+    gap: 18px;
+  }
+
+  .app-name {
+    font-size: 1.4rem;
+  }
+
+  .app-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .reg-input {
+    padding: 10px 10px;
+    font-size: 0.78rem;
+  }
+
+  .signup-button {
+    padding: 11px;
+    font-size: 0.78rem;
+  }
+
+  .terms-text {
+    font-size: 0.65rem;
+  }
+
+  .terms-highlight {
+    font-size: 0.8rem;
+  }
+
+  .checkbox-label {
+    font-size: 0.7rem;
+  }
+}
+
+
+.error-message {
+    display: block;
+    color: #ef4444;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    padding-left: 4px;
+    margin-top: -6px;
+}
