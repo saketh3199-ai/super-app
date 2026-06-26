@@ -8,7 +8,6 @@
   padding: 0;
 }
 
-
 /* ─── Root container ─────────────────────────────────────── */
 .category-container {
   display: flex;
@@ -114,10 +113,10 @@
 /* ─── Individual card ────────────────────────────────────── */
 .category-card-individual-container {
   border-radius: 16px;
-  padding: 14px 14px 10px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   overflow: hidden;
@@ -130,16 +129,18 @@
 
 .card-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #ffffff;
 }
 
+/* ─── THE FIX: full-width + aspect ratio instead of fixed height ── */
 .card-image {
-  width: 70%;
-  height:150px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 10px;
+  display: block;
 }
 
 /* ─── Card background colors ─────────────────────────────── */
@@ -154,7 +155,6 @@
 
 /* ─── Next Page button ───────────────────────────────────── */
 .next-page-button-container {
-  grid-column: 1 / -1;
   display: flex;
   justify-content: flex-end;
   padding-top: 8px;
@@ -183,8 +183,10 @@
   border: none;
   border-radius: 999px;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
-.next-page-button:hover {
+
+.next-page-button-active:hover {
   background-color: #22c55e;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(74, 222, 128, 0.3);
@@ -194,12 +196,15 @@
    RESPONSIVENESS
 ═══════════════════════════════════════════════════════════ */
 
-/* Tablet */
+/* Tablet — stack left/right into single column */
 @media (max-width: 900px) {
   .category-container {
-    grid-template-columns: 1fr;
     padding: 32px 24px;
     gap: 24px;
+  }
+
+  .category-content-row {
+    grid-template-columns: 1fr;
   }
 
   .categories-to-be-selected-container {
@@ -216,17 +221,19 @@
 
   .categories-to-be-selected-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .category-main-heading {
     font-size: 1.3rem;
   }
 
-  .card-image {
-    height: 80px;
+  .card-title {
+    font-size: 0.78rem;
   }
 
-  .next-page-button {
+  .next-page-button-active,
+  .next-page-button-inactive {
     padding: 10px 24px;
     font-size: 0.82rem;
   }
