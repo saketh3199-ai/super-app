@@ -37,7 +37,6 @@
   filter: brightness(0.55) saturate(1.15);
 }
 
-/* gradient overlay: dark at bottom, transparent at top */
 .discover-overlay {
   position: absolute;
   inset: 0;
@@ -128,7 +127,7 @@
   box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.12);
 }
 
-/* checkbox row */
+/* ─── Checkbox row ───────────────────────────────────────── */
 .checkbox-row {
   display: flex;
   align-items: center;
@@ -152,7 +151,7 @@
   user-select: none;
 }
 
-/* signup button */
+/* ─── Signup button ──────────────────────────────────────── */
 .signup-button {
   width: 100%;
   padding: 14px;
@@ -209,13 +208,23 @@
   color: #86efac;
 }
 
+/* ─── Error message ──────────────────────────────────────── */
+.error-message {
+  display: block;
+  color: #ef4444;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding-left: 4px;
+  margin-top: -6px;
+}
+
 /* ═══════════════════════════════════════════════════════════
    RESPONSIVENESS
-   The two-column layout is kept at ALL breakpoints as required.
-   We only adjust sizing/padding, never stack the columns.
 ═══════════════════════════════════════════════════════════ */
 
-/* Tablet — tighten spacing */
+/* Tablet */
 @media (max-width: 900px) {
   .registration-container {
     padding: 36px 24px;
@@ -234,67 +243,54 @@
   }
 }
 
-/* Small mobile — shrink further but keep side-by-side */
-@media (max-width: 540px) {
+/* Mobile — stack into single column */
+@media (max-width: 600px) {
   .registration-total-container {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 220px 1fr;
   }
 
   .discover-new-things-container {
-    min-height: 100vh;
+    min-height: unset;
+    height: 220px;
   }
 
   .discover-heading {
-    font-size: 1rem;
+    font-size: 1.2rem;
     bottom: 20px;
-    left: 12px;
-    right: 8px;
+    left: 20px;
+    right: 20px;
   }
 
   .registration-container {
-    padding: 24px 12px;
-    gap: 18px;
+    padding: 32px 24px;
+    gap: 20px;
+    min-height: unset;
   }
 
   .app-name {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
 
   .app-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.85rem;
   }
 
   .reg-input {
-    padding: 10px 10px;
-    font-size: 0.78rem;
+    padding: 12px 14px;
+    font-size: 0.88rem;
   }
 
   .signup-button {
-    padding: 11px;
-    font-size: 0.78rem;
+    padding: 13px;
+    font-size: 0.88rem;
   }
 
   .terms-text {
-    font-size: 0.65rem;
-  }
-
-  .terms-highlight {
-    font-size: 0.8rem;
+    font-size: 0.72rem;
   }
 
   .checkbox-label {
-    font-size: 0.7rem;
+    font-size: 0.78rem;
   }
-}
-
-
-.error-message {
-    display: block;
-    color: #ef4444;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    padding-left: 4px;
-    margin-top: -6px;
 }
