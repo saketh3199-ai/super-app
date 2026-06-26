@@ -21,8 +21,8 @@
 }
 
 .movie-card {
-    width: 200px;
-    height: 280px;
+     width: 140px;
+     height: 210px;
     cursor: pointer;
     border-radius: 8px;
     overflow: hidden;
